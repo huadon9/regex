@@ -29,8 +29,14 @@
                 var regex = document.getElementById('regular').value;
                 var text = document.getElementById('text').value;
                 var nreg = new RegExp(regex);
-                var bool = nreg.test(text);
-                document.getElementById('result').textContent = bool;
+                var result = null;
+                if (regex.indexOf('(') > -1 || regex.indexOf(')') > -1) {
+                    result = text.match(nreg);
+                } else {
+                    result = nreg.test(text);
+                }
+                
+                document.getElementById('result').textContent = result.toString();
             }
         });
     </script>
