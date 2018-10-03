@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>regular expression</title>
 </head>
+
 <body>
-   
+    <p>输入正则</p>
+    <p>
+        <input type="text" id="regular" value="\bs\d*?e\b">
+    </p>
+    <p>输入文本</p>
+    <p>
+        <input type="text" id="text" value="s2e">
+    </p>
+    <p>
+        <button id="test">测试</button>
+    </p>
+    <p>结果：
+        <span id="result"></span>
+    </p>
+    <script>
+        setTimeout(function () { 
+            document.getElementById('test').onclick = function () {
+                var regex = document.getElementById('regular').value;
+                var text = document.getElementById('text').value;
+                var nreg = new RegExp(regex);
+                var bool = nreg.test(text);
+                document.getElementById('result').textContent = bool;
+            }
+        });
+    </script>
+
 </body>
+
 </html>
