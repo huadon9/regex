@@ -35,4 +35,4 @@ $ | 结尾 | 字符串结尾
 [A-F0-9xy] | 指定范围的字符 | A, ..., 9, x, y
 [^A-F] | 指定范围外的字符 | X
 AB\|CD | AB或CD | AB, CD
-AB | CD | EFG | AB或CD或EFG | AB, CD, EFG
+AB\|\CD\|EFG | AB或CD或EFG | AB, CD, EFG
